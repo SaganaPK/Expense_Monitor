@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExpenseMonitor</string>
+    <string name="product_name_hint">PRODUCT</string>
+    <string name="product_quantity_hint">QUANTITY</string>
+    <string name="product_store_hint">STORE</string>
+    <string name="product_date_hint">DATE</string>
+    <string name="product_price_hint">PRICE</string>
+    <string name="add_product_button">ADD</string>
+    <string name="select_unit">Select a Unit</string>
+    <string name="select_product_type">Select Product Type</string>
+</resources>

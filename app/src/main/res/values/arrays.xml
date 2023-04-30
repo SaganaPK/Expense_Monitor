@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="product_types">
+        <item>Liquid</item>
+        <item>Weight</item>
+        <item>Quantity</item>
+    </string-array>
+    <string-array name="liquid_units">
+        <item>Milliliters</item>
+        <item>Liters</item>
+        <item>Fluid Ounces</item>
+        <item>Gallons</item>
+    </string-array>
+    <string-array name="quantity_units">
+        <item>Units</item>
+        <item>Dozens</item>
+        <item>Boxes</item>
+        <item>Packs</item>
+    </string-array>
+    <string-array name="weight_units">
+        <item>Grams</item>
+        <item>Kilograms</item>
+        <item>Ounces</item>
+        <item>Pound</item>
+    </string-array>
+    <string-array name="empty_array">
+        <item></item>
+    </string-array>
+</resources>

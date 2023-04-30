@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "720349494668",
+    "project_id": "expensemonitor-40f43",
+    "storage_bucket": "expensemonitor-40f43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720349494668:android:2190cdcde25181a0186aa9",
+        "android_client_info": {
+          "package_name": "com.example.expensemonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720349494668-j6lfup3m3damr88s71cp262njl043gkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.expensemonitor",
+            "certificate_hash": "f34efb1d66723b2a09697e62aa09e4f027f5858e"
+          }
+        },
+        {
+          "client_id": "720349494668-s26vmb7uho0r6ja0gki28mmnkoej7nhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIpjGjYID6JF7AQdIFTUqbrzWTQQk0S9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720349494668-s26vmb7uho0r6ja0gki28mmnkoej7nhs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
