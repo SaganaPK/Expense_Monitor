@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:text="Product List"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/white"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productRecyclerView"

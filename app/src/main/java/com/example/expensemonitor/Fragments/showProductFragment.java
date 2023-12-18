@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,11 +20,11 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 
-public class showProductFragment extends Fragment {
+public class showProductFragment extends Fragment implements showProductAdapter.OnItemClickListener {
     private RecyclerView recyclerView;
     private showProductAdapter adapter;
     FirebaseFirestore firestore;
-    private ArrayList<String> productList;
+    private ArrayList<String> productList = new ArrayList<>();
 
     public showProductFragment() {
         // Required empty public constructor
@@ -31,17 +33,6 @@ public class showProductFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        // Initialize Firestore and the products collection reference
-     //   db = FirebaseFirestore.getInstance();
-
-        // Initialize the list of product names and the RecyclerView
-       // productList = new ArrayList<>();
-        /*productRecyclerView = view.findViewById(R.id.productRecyclerView);
-        productRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        productRecyclerView.setAdapter(adapter);*/
-
         View view = inflater.inflate(R.layout.show_product_fragment, container, false);
 
         recyclerView = view.findViewById(R.id.productRecyclerView);
@@ -49,7 +40,6 @@ public class showProductFragment extends Fragment {
 
 
         firestore = FirebaseFirestore.getInstance();
-        ArrayList<String> productList = new ArrayList<>();
 
         firestore.collection("ProductList").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -59,7 +49,7 @@ public class showProductFragment extends Fragment {
                         productList.add(productName);
                     }
                 }
-                adapter = new showProductAdapter(productList);
+                adapter = new showProductAdapter(productList, this);
                 recyclerView.setAdapter(adapter);
             } else {
                 Log.d(TAG, "Error getting documents: ", task.getException());
@@ -68,4 +58,20 @@ public class showProductFragment extends Fragment {
         return view;
     }
 
- }
+    @Override
+    public void onItemClick(String productName) {
+        // Create a new instance of the price trend fragment
+        showPriceTrendFragment showpricetrendfragment = new showPriceTrendFragment();
+
+        // Create a bundle to pass the selected product name as an argument
+        Bundle args = new Bundle();
+        args.putString("productName", productName);
+        showpricetrendfragment.setArguments(args);
+
+        // Launch the price trend fragment
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, showpricetrendfragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+}

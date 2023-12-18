@@ -65,7 +65,7 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
-     //   this.priceHistory.add(price); // Add the new price to the price history
+      //  this.priceHistory.add(price); // Add the new price to the price history
     }
 
     public void setPurchaseDate(String purchaseDate) {
@@ -74,5 +74,17 @@ public class Product {
 
     public void setStoreName(String storeName) {
         this.storeName = storeName;
+    }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", unit='" + unit + '\'' +
+                ", price=" + price +
+                ", purchaseDate='" + purchaseDate + '\'' +
+                ", storeName='" + storeName + '\'' +
+                ", priceHistory=" + priceHistory +
+                '}';
     }
 }
